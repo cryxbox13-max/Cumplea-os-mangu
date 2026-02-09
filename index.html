@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡El 1er Añito de Katya Giselle!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS (CSS) - El diseño de la página --- */
+        :root {
+            --color-amarillo: #FFD54F; /* Amarillo abejita */
+            --color-naranja: #FF8F00;
+            --color-rojo: #E53935;    /* Rojo Plim Plim */
+            --color-azul: #42A5F5;
+            --color-fondo: #FFF8E1;   /* Fondo cremita suave */
+        }
+
+        body {
+            font-family: 'Baloo 2', cursive;
+            background-color: var(--color-fondo);
+            background-image: radial-gradient(var(--color-amarillo) 10%, transparent 10%);
+            background-size: 30px 30px; /* Patrón de puntitos */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            border: 4px dashed var(--color-amarillo);
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--color-naranja);
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px var(--color-amarillo);
+        }
+
+        .invitacion-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            /* Efecto de borde tierno */
+            border: 3px solid white;
+            outline: 3px solid var(--color-azul);
+        }
+
+        /* Estilos de la Cuenta Regresiva */
+        .countdown-box {
+            background: var(--color-amarillo);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .countdown-title {
+           font-weight: 700;
+           color: var(--color-rojo);
+           font-size: 1.2em;
+           margin-bottom: 5px;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Fredoka One', cursive;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .time-unit {
+            background: var(--color-naranja);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 50px;
+        }
+        .time-unit span {
+            display: block;
+            font-size: 1.5em;
+        }
+        .time-label {
+            font-size: 0.7em;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        /* Estilos de los Botones */
+        .btn {
+            display: block;
+            width: 90%;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366; /* Verde WhatsApp */
+            color: white;
+        }
+
+        .btn-maps {
+            background-color: var(--color-azul); /* Azul Maps */
+            color: white;
+        }
+        
+        .footer-note {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .bee-icon {
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Mi Primer Añito! 🐝</h1>
+        
+        <img src="invitacion.png" alt="Invitación de Katya Giselle" class="invitacion-img">
+
+        <div class="countdown-box">
+            <div class="countdown-title">¡Falta muy poco!</div>
+            <div id="countdown">
+                <div class="time-unit"><span id="days">00</span><div class="time-label">Días</div></div>
+                <div class="time-unit"><span id="hours">00</span><div class="time-label">Horas</div></div>
+                <div class="time-unit"><span id="minutes">00</span><div class="time-label">Min</div></div>
+                <div class="time-unit"><span id="seconds">00</span><div class="time-label">Seg</div></div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/50254935406?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20primer%20añito%20de%20Katya%20Giselle%20" class="btn btn-whatsapp" target="_blank">
+            📞 Confirmar Asistencia
+        </a>
+
+        <a href="https://goo.gl/maps/jeKF1CkauV37eBp88" target="_blank">
+           
+        </a>
+        
+        <p class="footer-note">¡Te esperamos para celebrar con Katya!</p>
+    </div>
+
+
+    <script>
+        /* --- FUNCIONALIDAD (JavaScript) - La cuenta regresiva --- */
+
+        // FECHA DEL EVENTO: 22 de Febrero de 2026 a las 13:00:00
+        // Nota: El mes en JavaScript empieza en 0 (Enero=0, Febrero=1)
+        const eventDate = new Date(2026, 1, 22, 13, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.querySelector('.countdown-title').innerText = "¡Hoy es la fiesta! 🎉";
+                document.getElementById("countdown").style.display = "none";
+                clearInterval(timerInterval);
+                return;
+            }
+
+            // Cálculos de tiempo
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar en el HTML (añadiendo un 0 si es menor a 10)
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        // Actualizar cada segundo
+        updateCountdown(); // Ejecutar una vez al inicio para evitar retraso
+        const timerInterval = setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
